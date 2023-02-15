@@ -1,11 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from listings.models import Band
+from listings.models import Band, Resources
 
 # Create your views here.
 
 def hello(request):
-    return HttpResponse('<h1>Im new to Django</h1>')
+    resources = Resources.objects.all()
+    return HttpResponse(f"""
+    <h1>Im new to Django</h1>
+    <br />
+    <h2>Here are resources i'm using</h2>
+    <ul>
+    <ol>{resources[0].title}</ol>
+    <ol>{resources[1].title}</ol>
+    </ol>
+    """)
 
 def homePage(request):
     bands = Band.objects.all()
