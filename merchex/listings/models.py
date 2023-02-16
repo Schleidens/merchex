@@ -4,6 +4,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 
 class Band(models.Model):
+    def __str__(self):
+        return self.name
+    
     class Genre(models.TextChoices):
         HIP_HOP = 'HH'
         SYNTH_POP = 'SP'
@@ -19,5 +22,8 @@ class Band(models.Model):
     official_homepage = models.fields.URLField(null=True, blank=True)
 
 class Resources(models.Model):
+    def __str__(self):
+        return self.title
+    
     title = models.fields.CharField(max_length=100)
     link = models.fields.URLField(null=True, blank=True)
