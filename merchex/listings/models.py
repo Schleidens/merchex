@@ -3,6 +3,13 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+class Category(models.Model):
+    def __str__(self):
+        return self.category
+
+    category = models.CharField(max_length=30)
+
+
 class Band(models.Model):
     def __str__(self):
         return self.name
@@ -20,6 +27,7 @@ class Band(models.Model):
     )
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
 
 class Resources(models.Model):
     def __str__(self):
