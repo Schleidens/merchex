@@ -10,12 +10,4 @@ def hello(request):
 
 def homePage(request):
     bands = Band.objects.all()
-    return HttpResponse(f"""
-    <h1>I'm the HomePage</h1>
-    <br />
-    <h2>Here a list pf group</h2>
-    <ul>
-    <li>{bands[0].name}</li>
-    <li>{bands[1].name}</li>
-    </ul>
-    """)    
+    return render(request, 'band.html', {'band': bands}) 
