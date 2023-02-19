@@ -23,7 +23,7 @@ class Band(models.Model):
     genre = models.fields.CharField(choices=Genre.choices, max_length=50)
     biography = models.fields.CharField(max_length=1000)
     year_formed = models.fields.IntegerField(
-        validators=[MaxValueValidator(1900), MinValueValidator(2023)]
+        validators=[MaxValueValidator(2023), MinValueValidator(1900)]
     )
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
