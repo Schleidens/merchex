@@ -4,9 +4,9 @@ from listings.models import Band, Resources
 
 # Create your views here.
 
-def hello(request):
+def resources(request):
     resources = Resources.objects.all()
-    return render(request, 'hello.html', {'resource': resources})
+    return render(request, 'resources.html', {'resource': resources})
 
 def homePage(request):
     bands = Band.objects.all()
