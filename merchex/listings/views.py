@@ -10,4 +10,8 @@ def resources(request):
 
 def homePage(request):
     bands = Band.objects.all()
-    return render(request, 'band.html', {'band': bands}) 
+    return render(request, 'band.html', {'band': bands})
+
+def band_details(request, id):
+    band = Band.objects.get(id=id)
+    return render(request, 'band_details.html', {'band' : band})
