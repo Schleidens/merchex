@@ -4,7 +4,7 @@
 
 <ul>
 {% for item  in band %}
-<li>{{ item }}</li>
+<li><a href="{% url 'band-view' item.id %}">{{ item.name }}</a></li>
 {% endfor %}
 </ul>
 
