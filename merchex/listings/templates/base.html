@@ -9,6 +9,19 @@
     <title>Hello</title>
 </head>
 <body>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="{% url 'homePage'%}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'resources'%}">Resources</a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}">Contact</a>
+            </li>
+        </ul>
+    </div>
     {% block content%}
     {% endblock %}
 </body>
