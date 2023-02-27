@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.homePage, name="homePage"),
     path("resources/", views.resources, name="resources"),
     path('band/<int:id>', views.band_details, name="band-view"),
-    path('contact/', views.contact_form, name='contact')
+    path('contact/', views.contact_form, name='contact'),
+    path('band/add/', views.create_band, name='create_band')
 ]

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{%  block content%}
+    <h1>
+        Create a new band here
+    </h1>
+
+    <div>
+        <form action="" method="post" novalidate>
+            {% csrf_token%}
+            {{ band.as_p }}
+        <input type="submit" value="Submit">    
+        </form>
+    </div>
+{%  endblock %}
