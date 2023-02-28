@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>by clicking the delete button bellow you agree to delete {{band.name}} from your DB</h1>
+<div style="margin-bottom: 2em;">by clicking the delete button bellow you agree to delete <b>{{band.name}}</b> from your DB</div>
 
 <form action="" method="post">
     {% csrf_token %}
