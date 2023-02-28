@@ -4,7 +4,10 @@
 
 <ul>
 {% for item  in band %}
-<li><a href="{% url 'band-view' item.id %}">{{ item.name }}</a></li>
+<li style="margin-bottom: 1em;"><a href="{% url 'band-view' item.id %}">{{ item.name }}</a>
+    <br />
+    <a href="{%url 'update-band' item.id %}" style="margin-left: 5px;">- modify</a>
+</li>
 {% endfor %}
 </ul>
 
