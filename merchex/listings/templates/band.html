@@ -6,7 +6,8 @@
 {% for item  in band %}
 <li style="margin-bottom: 1em;"><a href="{% url 'band-view' item.id %}">{{ item.name }}</a>
     <br />
-    <a href="{%url 'update-band' item.id %}" style="margin-left: 5px;">- modify</a>
+    <a href="{% url 'update-band' item.id %}" style="margin-left: 5px;">modify | </a> 
+    <a href="{% url 'delete-band' item.id %}">delete</a>
 </li>
 {% endfor %}
 </ul>
