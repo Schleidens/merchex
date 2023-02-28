@@ -45,3 +45,19 @@ def create_band(request):
     else:
         band = createBand()    
     return render(request, 'create_band.html', {'band': band})
+
+
+def update_band(request, id):
+    band = Band.objects.get(id=id)
+
+    if request.method == 'POST':
+        form = createBand(request.POST, instance=band)
+
+        if form.is_valid:
+            form.save()
+            return HttpResponseRedirect(reverse('band-view', kwargs={'id': band.id}))
+    else:
+        form =  createBand(instance=band)    
+
+    return render(request, 'update_band.html', {'form': form})
+
