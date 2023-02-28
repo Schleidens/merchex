@@ -61,3 +61,11 @@ def update_band(request, id):
 
     return render(request, 'update_band.html', {'form': form})
 
+def delete_band(request, id):
+    band = Band.objects.get(id=id)
+
+    if request.method == 'POST':
+        band.delete()
+        return HttpResponseRedirect(reverse('homePage'))
+
+    return render(request, 'delete_band.html', {'band': band})    
