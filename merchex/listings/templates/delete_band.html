@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>by clicking the delete button bellow you agree to delete {{band.name}} from your DB</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+<input type="submit" value="Delete">    
+</form>
+{% endblock %}
