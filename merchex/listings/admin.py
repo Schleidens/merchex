@@ -6,6 +6,7 @@ from  listings.models import Band, Resources, Category
 
 class BandAdmin(admin.ModelAdmin):
     list_display = ('name', 'year_formed', 'genre')
+    prepopulated_fields = {"slug": ("category", "name")}
 
 admin.site.register(Category)
 admin.site.register(Band, BandAdmin)
