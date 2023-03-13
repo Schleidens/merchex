@@ -27,6 +27,7 @@ class Band(models.Model):
     )
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+    slug = models.SlugField(default="", null=False)
     category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
 
 class Resources(models.Model):
